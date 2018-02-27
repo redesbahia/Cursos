@@ -1,0 +1,54 @@
+
+Executa comandos remotos sem playbooks:
+# ansible automation -m command -a "ls /"
+-m - modules
+-a - atribute
+resultado -> 192.168.200.10 | SUCCESS | rc=0 >>
+rc = return code
+
+
+Docker funciona com para-virtualização
+virtualzaição full - tudo é virtualizado
+para-virtualização - o kernel é o da maquina hospedeira e o restante é virtualizado
+
+chroot - enjaula o filesystem
+
+Client - cliente
+Server - daemon
+
+image = read-olny - imutavel
+container = read and write - alteravel
+
+run -it - i=interação t=tty/console
+
+
+
+
+DÚVIDAS:
+
+
+1 - Como remover roles. error:
+root@devops:/home# ansible-galaxy delete ntp
+ERROR! Missing one or more arguments. Expected: github_user github_repo
+root@devops:/home# 
+root@devops:/home# ansible-galaxy remove ntp
+- ntp is not installed, skipping.
+
+
+- Qual melhor prática adotada pela industria para encaminhar as requisições de múltiplos websites em um mesmo host na porta 80?
+
+
+RESOLVIDO - Utilizar path default definido no conf.
+- Caminhos path do desafio, as roles ficaram em local diferente do default, ficou em /home/roles, conforme solicita no desafio. O caminho no cookbook já é outro:
+ERROR! the role 'ntp' was not found in /etc/ansible/playbooks/ambiente/roles:/etc/ansible/playbooks/ambiente:/etc/ansible/roles
+
+The error appears to have been in '/etc/ansible/playbooks/ambiente/ntp.yml': line 6, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  roles:
+    - ntp
+      ^ here
+
+
