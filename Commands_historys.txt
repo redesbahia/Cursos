@@ -21,6 +21,24 @@ container = read and write - alteravel
 
 run -it - i=interação t=tty/console
 
+limit container
+disco - só com xfs
+
+--storage-opt size=120G
+
+sshpass - necessário no ansible p/ cliente usar com usuario e senhas;
+
+debian jessie - Processo de instalação oneroso;
+				ex. apt install python-pip
+                    pip install ansible --upgrade
+
+
+editor de texto yml - atom
+
+portainer - gerencia container via web;
+
+tem algum tipo de relatorio deas alterações...existe alguma gui pra isso? foreman puppet
+
 
 
 
@@ -33,9 +51,11 @@ ERROR! Missing one or more arguments. Expected: github_user github_repo
 root@devops:/home# 
 root@devops:/home# ansible-galaxy remove ntp
 - ntp is not installed, skipping.
+RESP. Pode excluir o diretorio;
 
 
 - Qual melhor prática adotada pela industria para encaminhar as requisições de múltiplos websites em um mesmo host na porta 80?
+	Sim. E para APIs, usa proxy p/ apis, ex. kong api.
 
 
 
